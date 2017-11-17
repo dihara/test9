@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html class="mdc-typography">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Greeting App</title>
+    <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+    <script src="/assets/drawer/drawer.css.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+      /* Ensure layout covers the entire screen. */
+      html {
+        height: 100%;
+      }
+
+      /* Place drawer and content side by side. */
+      .demo-body {
+        display: flex;
+        flex-direction: row;
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        height: 100%;
+        width: 100%;
+      }
+
+      /* Stack toolbar and main on top of each other. */
+      .demo-content {
+        display: inline-flex;
+        flex-direction: column;
+        flex-grow: 1;
+        height: 100%;
+        box-sizing: border-box;
+      }
+
+      .demo-main {
+        padding-left: 16px;
+      }
+    </style>    
+</head>
+
+<body class="demo-body mdc-typography">
+    
+ <aside class="mdc-persistent-drawer">
+      <nav class="mdc-persistent-drawer__drawer">
+        <div class="mdc-persistent-drawer__toolbar-spacer"></div>
+        <div class="mdc-list-group">
+          <nav class="mdc-list">
+            <a class="mdc-list-item mdc-persistent-drawer--selected" href="#">
+              <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">inbox</i>Inbox
+            </a>
+            <a class="mdc-list-item" href="#">
+              <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">star</i>Star
+            </a>
+            <a class="mdc-list-item" href="#">
+              <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">send</i>Sent Mail
+            </a>
+            <a class="mdc-list-item" href="#">
+              <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">drafts</i>Drafts
+            </a>
+          </nav>
+
+          <hr class="mdc-list-divider">
+
+          <nav class="mdc-list">
+              <a class="mdc-list-item" href="#">
+                <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">email</i>All Mail
+              </a>
+              <a class="mdc-list-item" href="#">
+                <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">delete</i>Trash
+              </a>
+              <a class="mdc-list-item" href="#">
+                <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">report</i>Spam
+              </a>
+            </nav>
+          </div>
+      </nav>
+    </aside>    
+    
+     <div class="demo-content">
+   <header class="mdc-toolbar mdc-elevation--z4">
+        <div class="mdc-toolbar__row">
+          <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
+            <button class="demo-menu material-icons mdc-toolbar__menu-icon">menu</button>
+            <span class="mdc-toolbar__title catalog-title">Immigrant news</span>
+          </section>
+        </div>
+      </header> 
+      
+      <h2>Newsfeed</h2>
+<ul class="mdc-list mdc-list--avatar-list">
+  <li class="mdc-list-item">
+    <img class="mdc-list-item__start-detail" src="percent.png"
+         width="56" height="56">
+    Mc Donalds raided, two taken by ICE
+    <a class="mdc-list-item__end-detail material-icons" href="#" aria-label="Add to favorites" title="Add to favorites" onclick="event.preventDefault();">
+                  star_border
+                </a>
+  </li>
+  <li class="mdc-list-item">
+    <img class="mdc-list-item__start-detail" src="percent.png"
+         width="56" height="56">
+    Factory workers taken into custody
+    <a class="mdc-list-item__end-detail material-icons" href="#" aria-label="Add to favorites" title="Add to favorites" onclick="event.preventDefault();">
+                  star_border
+                </a>
+  </li>
+  <li class="mdc-list-item">
+    <img class="mdc-list-item__start-detail" src="percent.png"
+         width="56" height="56">
+    LAX not safe for immigrants
+    <a href="#" class="mdc-list-item__end-detail material-icons"
+       aria-label="Remove from favorites" title="Remove from favorites">
+      star
+    </a>
+  </li>
+</ul>
+
+
+   <form action="#" id="greeting-form">
+            <div>
+                <div class="mdc-form-field">
+                    <div class="mdc-text-field" data-mdc-auto-init="MDCTextField">
+                        <input id="firstname" type="text" class="mdc-text-field__input">
+                        <label for="firstname" class="mdc-text-field__label">
+            First Name
+          </label>
+                        <div class="mdc-text-field__bottom-line"></div>
+                    </div>
+                </div>
+
+                <div class="mdc-form-field">
+                    <div class="mdc-text-field" data-mdc-auto-init="MDCTextField">
+                        <input id="lastname" type="text" class="mdc-text-field__input">
+                        <label for="lastname" class="mdc-text-field__label">
+            Last Name
+          </label>
+                        <div class="mdc-text-field__bottom-line"></div>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="mdc-button
+                   mdc-button--raised
+                   mdc-ripple-surface" data-mdc-auto-init="MDCRipple">
+      contribute
+    </button>
+        </form>
+       <!-- The p element below is where we'll eventually output our greeting -->
+        <p class="mdc-typography--headline" id="greeting"></p>
+        
+     <!-- OTHER THINGS -->   
+
+      </div>
+      
+      
+      
+      
+      
+ 
+
+
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <script>
+        window.mdc.autoInit();
+    </script>
+
+    <script>
+        document.getElementById('greeting-form').addEventListener('submit', function(evt) {
+            evt.preventDefault();
+            var firstname = evt.target.elements.firstname.value;
+            var lastname = evt.target.elements.lastname.value;
+            var greeting = 'Hello';
+            if (firstname || lastname) {
+                greeting += ', ';
+                if (firstname && lastname) {
+                    greeting += firstname + ' ' + lastname;
+                }
+                else if (lastname) {
+                    greeting += 'Mx. ' + lastname;
+                }
+                else {
+                    greeting += firstname;
+                }
+            }
+            greeting += '!';
+
+            document.getElementById('greeting').textContent = greeting;
+        });
+    </script>
+    
+    <script>      var drawerEl = document.querySelector('.mdc-persistent-drawer');
+        var MDCPersistentDrawer = mdc.drawer.MDCPersistentDrawer;
+        var drawer = new MDCPersistentDrawer(drawerEl);
+        document.querySelector('.demo-menu').addEventListener('click', function() {
+          drawer.open = !drawer.open;
+        });
+        drawerEl.addEventListener('MDCPersistentDrawer:open', function() {
+          console.log('Received MDCPersistentDrawer:open');
+        });
+        drawerEl.addEventListener('MDCPersistentDrawer:close', function() {
+          console.log('Received MDCPersistentDrawer:close');
+        });</script>
+</body>
+
+</html>
